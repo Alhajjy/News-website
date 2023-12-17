@@ -1,0 +1,68 @@
+@import "../../components/variables.scss";
+.choose {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    .sign-toggle {
+        background-color: $c-purple;
+        border-radius: 30px;
+        padding: 10px 20px;
+        display: inline-flex;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 1.1em;
+        color: white;
+        .way {
+            cursor: pointer;
+            transition-duration: $trans-time;
+            &:hover {
+                color: $c-posts;
+            }
+        }
+        .w-sign {
+            color: white;
+        }
+        .b-sign {
+            color: $c-posts;
+        }
+    }
+    .sign {
+        form {
+            display: flex;
+            flex-direction: column;
+            h2 {
+                color: $c-purple;
+            }
+            label {
+                font-weight: bold;
+            }
+            input {
+                margin: 10px 0;
+                border-radius: 15px 15px 15px 15px;
+                padding-left: 10px;
+                color: $c-purple;
+                caret-color: $c-purple;
+                outline: none;
+                border: 0;
+                border-bottom: 1px dashed $c-purple;
+                height: 30px;
+                background-color: #80008024;
+            }
+            button {
+                border: 0;
+                padding: 10px 15px;
+                width: fit-content;
+            }
+        }
+    }
+    .hid-form {
+        display: none;
+    }
+    .logout {
+        border: 0;
+        margin-top: 30px;
+        background-color: red;
+    }
+}

@@ -1,0 +1,25 @@
+@import "./variables.scss";
+.main-btn {
+    background-color: $c-purple;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    transition-duration: $trans-time;
+    cursor: pointer;
+    &:hover {
+        opacity: 70%;
+    }
+}
+h1.main-title {
+    text-align: center;
+    color: $c-purple;
+}
+.hoverable {
+    transition-duration: $trans-time;
+    cursor: pointer;
+    &:hover {
+        opacity: 70%;
+    }
+}

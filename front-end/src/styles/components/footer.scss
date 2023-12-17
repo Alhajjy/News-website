@@ -1,0 +1,89 @@
+@import "./variables.scss";
+.footer {
+    background-color: pink;
+    padding: 50px 100px 0;
+    p {
+        color: blue;
+        line-height: 2;
+    }
+    .support {
+        .all-sub {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            cursor: pointer;
+            :hover {
+                opacity: 70%;
+            }
+            .image {
+                width: 20%;
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+    .contact {
+        padding: 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+        @media (max-width: 1200px) {
+            justify-content: center;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .follow,
+            .cont {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                h3 {
+                    margin-right: 20px;
+                    font-size: 25px;
+                }
+                .icon {
+                    width: 10%;
+                    margin: 0 5px;
+                    cursor: pointer;
+                    :hover {
+                        opacity: 70%;
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .quote {
+            color: $c-purple;
+            max-width: 400px;
+            text-shadow: -5px 5px 4px #29aecb;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 50px;
+            @media (max-width: 1200) {
+                max-width: 3000px;
+            }
+        }
+    }
+}
+.rights {
+    display: block;
+    background-color: $c-posts;
+    color: $c-purple;
+    font-weight: 900;
+    text-align: center;
+}
+@media (max-width: 767px) {
+    .footer {
+        padding: 50px 5px;
+        .quote {
+            text-align: center;
+        }
+    }
+}

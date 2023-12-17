@@ -1,0 +1,139 @@
+@import "./variables.scss";
+.navbar {
+    height: 50px;
+    background: $c-grad1;
+    grid-column: span 12;
+    grid-template-areas: "logo logo . . . . menu menu menu menu menu menu";
+    border-radius: 0px 0px 15px 15px;
+    align-items: center;
+    .logo-side {
+        display: flex;
+        overflow: hidden;
+        justify-content: space-between;
+        min-width: 200px;
+        grid-column: 1/ 4;
+        grid-area: logo;
+        cursor: pointer;
+        .image {
+            position: relative;
+            width: 20%;
+            padding-left: 30px;
+            img {
+                position: absolute;
+                width: 100%;
+                min-width: 50px;
+            }
+        }
+        h1 {
+            color: $c-purple;
+            font-size: 35px;
+            margin: 5px 0;
+        }
+    }
+    .menu {
+        display: flex;
+        height: 50px;
+        min-width: 600px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        list-style-type: none;
+        grid-area: menu;
+        a {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            height: 82px;
+            width: 30%;
+            transition: $trans-time;
+            position: relative;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            &::after {
+                content: "";
+                width: 1px;
+                height: 30px;
+                left: 0px;
+                top: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+                background-color: white;
+            }
+            &:hover {
+                &,
+                svg {
+                    transition: $trans-time;
+                    color: $c-purple;
+                }
+                &::after {
+                    background-color: $c-purple;
+                }
+            }
+        }
+        a:last-child {
+            width: 5%;
+            min-width: 30px;
+            flex-shrink: 0;
+            color: #fff;
+            &::after {
+                left: -10px;
+            }
+        }
+    }
+    .menu-btn {
+        display: none;
+    }
+}
+@media (max-width: 1000px) {
+    .navbar {
+        grid-template-areas: "logo logo . . . . . . . . . sm-menu";
+        .menu {
+            display: inline-flex;
+            position: absolute;
+            top: 55px;
+            padding: 10px 0;
+            right: 3%;
+            min-width: 0;
+            width: 0;
+            height: auto;
+            flex-direction: column;
+            background-color: $c-navs;
+            border-radius: 10px;
+            z-index: 20;
+            transition-duration: $trans-time;
+            overflow: hidden;
+            a {
+                font-size: 24px;
+                height: 40px;
+                padding: 0 60px;
+                position: relative;
+                &::after {
+                    height: 1px;
+                    width: 100%;
+                    left: 0%;
+                    top: 115%;
+                }
+            }
+            :last-child::after {
+                display: none;
+            }
+        }
+        .small-menu {
+            min-width: 100px;
+            width: 250px;
+        }
+        .menu-btn {
+            display: inline-block;
+            font-size: 40px;
+            color: white;
+            grid-area: sm-menu;
+            cursor: pointer;
+            transition-duration: $trans-time;
+            &:hover {
+                color: $c-purple;
+            }
+        }
+    }
+}

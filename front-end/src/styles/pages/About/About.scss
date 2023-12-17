@@ -1,0 +1,64 @@
+@import "../../components/variables.scss";
+.about {
+    background: linear-gradient(
+        102deg,
+        #7300a9 -31.16%,
+        rgba(115, 0, 169, 0) 163.06%
+    );
+
+    padding: 20px 20px;
+    position: relative;
+    .images {
+        grid-area: images;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 10px;
+        .image {
+            min-width: 240px;
+            max-width: 400px;
+            img {
+                border-radius: 10px;
+                width: 100%;
+            }
+        }
+    }
+    .down {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div.text {
+            h1 {
+                color: white;
+            }
+            p.text {
+                line-height: 2;
+                color: white;
+                font-weight: 500;
+            }
+        }
+        .media {
+            .image {
+                width: 60px;
+                padding: 10px 0;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        @media (max-width: 787px) {
+            flex-direction: column;
+            .media {
+                display: flex;
+                flex-flow: row wrap;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                .image {
+                    width: 18%;
+                    max-width: 60px;
+                }
+            }
+        }
+    }
+}

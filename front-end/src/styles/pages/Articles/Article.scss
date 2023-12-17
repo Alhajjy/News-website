@@ -1,0 +1,94 @@
+@import "../../components/variables.scss";
+.article {
+    background-color: $e;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas: "content content content content content content content content suggested suggested suggested suggested";
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 10px;
+    .content {
+        grid-area: content;
+        .details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 0 20px 0;
+            .date {
+                color: #333;
+            }
+            .writer {
+                color: $c-purple;
+            }
+        }
+        .text {
+            h2 {
+                color: $c-purple;
+            }
+            p {
+                line-height: 2;
+                font-size: 1.1em;
+            }
+        }
+    }
+    .suggested {
+        grid-area: suggested;
+        text-align: center;
+        h2 {
+            color: $c-purple;
+        }
+        .art-card {
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: $c-posts;
+            width: 100%;
+            margin-bottom: 12px;
+            box-shadow: -16px 16px 12px 0px rgba(0, 92, 104, 0.25);
+            .image {
+                img {
+                    width: 100%;
+                }
+            }
+            .down {
+                padding: 5px 10px;
+                .title {
+                    font-weight: 600;
+                    color: $c-purple;
+                }
+                .details {
+                    padding-top: 10px;
+                    font-size: 10px;
+                    color: #333;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .writer {
+                        color: $c-purple;
+                        font-weight: 600;
+                        font-size: 14px;
+                        max-width: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .suggested {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 10px;
+        h2 {
+            width: 100%;
+        }
+        .art-card {
+            max-width: 300px;
+        }
+    }
+}

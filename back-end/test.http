@@ -1,0 +1,11 @@
+POST http://localhost:3001/admins
+content-type: application/json
+Authorization: Bearer your_token
+
+{
+    "name": "man",
+    "password": "ofiaxm983y",
+    "wr": "handop"
+}
+###
+# GET http://localhost:3001/posts
